@@ -7,6 +7,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --time=00:40:00
+#SBATCH --mem=1G
 #SBATCH -A r00344
 
 #Call "date" at beginning and end just to get timestamps
