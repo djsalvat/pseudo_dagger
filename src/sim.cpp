@@ -113,6 +113,8 @@ int main(int argc, char** argv)
     
     
     //Generate a uniform rate by simulating a poisson process.
+
+    std::cout << "create neutron times" << std::endl;
     
     std::vector<double> t0s;
     double t = nextExp(r)/rate;
@@ -121,17 +123,21 @@ int main(int argc, char** argv)
         t0s.push_back(t);
         t += nextExp(r)/rate; //interarrival time is exponentially distributed
     }
+
+    std::cout << "generate events" << std::endl;
     
     std::vector<evt> raw = generator.gen_evts(r, t0s);
 
     TFile* f = new TFile(filename,"RECREATE");
+
+    std::cout << "make trees" << std::endl;
     
-    std::pair<TTree*,TTree*> trees = make_trees(raw,t0s);
+    std::pair<TTree*,TTree*> trees = make_trees(raw,t0s,arg_r,arg_d,arg_f);
     
     //ierr = MPI_Finalize();
 
-    trees.first->Write();
-    trees.second->Write();
+    //trees.first->Write();
+    //trees.second->Write();
     f->Close();
 
     return 0;

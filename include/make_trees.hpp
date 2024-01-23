@@ -16,6 +16,6 @@ typedef struct root_entry
     double realtime;
 } root_entry;
 
-std::pair<TTree*,TTree*> make_trees(std::vector<evt> &evts, std::vector<double>& t0s);
+std::pair<TTree*,TTree*> make_trees(std::vector<evt> &evts, std::vector<double>& t0s, char* arg_r, char* arg_d, char* arg_f);
 
 #endif /*MAKE_ROOT_TREE*/

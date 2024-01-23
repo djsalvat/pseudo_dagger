@@ -6,8 +6,8 @@
 #SBATCH -e /N/project/ceem_ucn/pseudo_dagger-out/%j.e
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --time=00:40:00
-#SBATCH --mem=1G
+#SBATCH --time=00:20:00
+#SBATCH --mem=16G
 #SBATCH -A r00344
 
 #Call "date" at beginning and end just to get timestamps
